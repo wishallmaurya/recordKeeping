@@ -1,30 +1,42 @@
 .App {
   text-align: center;
-  color: white;
+  color: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header{
-  background-color:rgb(89, 9, 163);
+  width: 100%;
+  background-color: #105513;
+  color: rgb(231, 236, 234);
+  background: #100e0e;
+text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
+}
+h1 {
+  margin: 0;
+  width: 100%;
 }
 
-h1{
-  margin: 0;
-}
-.main{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 14px;
-}
-.movie{
-  color: white;
-  background-color: rgb(45, 80, 80);
-  border: 1px solid black;
-  padding: 4px;
-  text-align: center;
+.form {
+  align-items: center;
   margin-top: 10px;
 }
-.movie img{
-  height:70%;
-  width: 70%;
+
+.data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.data-val{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  color: #100e0e;
+  padding: 0px 12px 0px 12px;
+  background-color: #f9f9f9;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
