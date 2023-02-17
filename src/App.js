@@ -15,7 +15,7 @@ function App() {
   const [data, setData] = useState([]);
 
   const addData = () => {
-    setData([...data, { name, phone,email }]);
+    setData([{ name, phone, email }, ...data]);
     setName("");
     setPhone("");
     setEmail("");
@@ -24,11 +24,16 @@ function App() {
     let arr = data;
     arr.splice(index, 1);
     setData([...arr]);
+    return ``
   };
- const deleteAll =()=>{
-  setData([])
- }
-
+  const deleteAll = () => {
+    setData([]);
+    return ``
+  };
+  const handelPress = (event) => {
+    if (event.key === `Enter`) addData();
+  };
+  document.title = `(${data.length}) Contacts`;
   return (
     <div className="App">
       <h1>
@@ -44,24 +49,24 @@ function App() {
             required
             id="outlined-required"
             label="Name"
-            defaultValue="Vishal"
           />
           <TextField
+            // onCopy={()=>window.alert(`dont copy this`)}
             value={phone}
             onChange={(event) => setPhone(event.target.value)}
             required
             id="outlined-required"
             label="Phone"
-            defaultValue="Vishal"
           />
           <TextField
+            onKeyPress={(e) => handelPress(e)}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             required
             id="outlined-required"
             label="Email"
-            defaultValue="wish"
           />
+
           <Button onClick={addData} variant="contained" color="success">
             <LibraryAddIcon />
           </Button>
@@ -73,7 +78,7 @@ function App() {
           <h4>Name</h4>
           <h4>Phone</h4>
           <h4>Email</h4>
-          <h4 onClick={() => deleteAll()}>Remove</h4>
+          <h4 onClick={()=>window.alert(`are you sure want to delete all data ? ${deleteAll()}`)}>Remove</h4>
         </div>
         <hr />
         {data.map((element, index) => {
@@ -82,7 +87,7 @@ function App() {
               <h4>{element.name}</h4>
               <h4>{element.phone}</h4>
               <h4>{element.email}</h4>
-              <Button onClick={() => removeItem(index)}>
+              <Button onClick={()=>window.alert(`are you sure want to delete? ${removeItem(index)}`)} >
                 <RemoveCircleIcon />
               </Button>
             </div>
